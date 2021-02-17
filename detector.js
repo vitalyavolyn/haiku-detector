@@ -23,7 +23,7 @@ export const getHaiku = (text) => {
   const words = text.replace(/\s+/g, ' ').split(' ')
   const haiku = [[], [], []]
   let paragraph = 0
-  
+
   for (let word of words) {
     haiku[paragraph].push(word)
 
@@ -31,7 +31,7 @@ export const getHaiku = (text) => {
     const maxSyllables = [5, 7, 5]
 
     if (paragraphSyllableCount === maxSyllables[paragraph]) {
-      paragraph++
+      if (paragraph<2) paragraph++
       continue
     }
 
