@@ -31,7 +31,7 @@ export const getHaiku = (text) => {
     const maxSyllables = [5, 7, 5]
 
     if (paragraphSyllableCount === maxSyllables[paragraph]) {
-      if (paragraph<2) paragraph++
+      if (paragraph < 2) paragraph++
       continue
     }
 

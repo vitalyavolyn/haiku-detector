@@ -5,7 +5,7 @@ import { token } from './config.js'
 const vk = new VK({ token })
 
 vk.updates.on('message_new', async (ctx) => {
-  if (!ctx.hasText) return
+  if (!ctx.hasText || ctx.isGroup) return
 
   const haiku = getHaiku(ctx.text)
   if (!haiku) return
